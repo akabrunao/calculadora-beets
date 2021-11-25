@@ -1,3 +1,4 @@
+/* variáveis */
 :root {
     --cor-fundo-calculadora-escuro: #1f201d;
     --cor-fundo-visor-escuro: #353840;
@@ -13,38 +14,39 @@
     --cor-fundo-acoes-claro: #d1e4fb;
   
     --cor-fundo-site: #74ebd5;
-}
-
-* {
+  }
+  
+  /* Reset e estilos básicos */
+  * {
     margin: 0;
     padding: 0;
     border: 0;
     background: none;
     box-sizing: border-box;
-}
-
-html {
+  }
+  
+  html {
     font-size: 10px;
-    font-family: 'Roboto', Arial, Helvetica, sans-serif;
-}
-
-body {
-    background-color: var(--cor-fundo-site);
-    height: 100vh;
+    font-family: 'Roboto', Helvetica, Arial, sans-serif;
+  }
+  
+  body {
     display: flex;
     justify-content: center;
     align-items: center;
-
-}
-
-.calculadora {
+    height: 100vh;
+    background-color: var(--cor-fundo-site);
+  }
+  
+  /* calculadora */
+  .calculadora {
     box-shadow: 0 0 25px 0 rgba(0, 0, 0, 0.3);
     border-radius: 2em;
     overflow: hidden;
     background-color: var(--cor-fundo-calculadora-escuro);
-}
-
-.visor {
+  }
+  
+  .visor {
     background-color: var(--cor-fundo-visor-escuro);
     color: var(--cor-numero-escuro);
     width: 34.5rem;
@@ -52,112 +54,117 @@ body {
     text-align: right;
     font-size: 5rem;
     border-radius: 0 0 2rem 2rem;
-}
-
-.teclas {
+  }
+  
+  .teclas {
     padding: 3rem;
     display: grid;
     grid-gap: 1.5rem;
     grid-template-columns: repeat(4, 6rem);
     grid-template-rows: repeat(5, 6rem);
-    grid-template-areas: 
-    'somar subtrair multiplicar dividir'
-    'sete oito nove salvar'
-    'quatro cinco seis recuperar'
-    'um dois tres limpar'
-    'zero decimal zero-duplo igual';
-}
-
-.zero {
-    grid-area: zero;
-}
-
-.somar {
-    grid-area: somar;
-}
-
-.subtrair {
-    grid-area: subtrair;
-}
-
-.multiplicar {
-    grid-area: multiplicar;
-}
-.dividir {
-    grid-area: dividir;
-}
-
-.sete {
-    grid-area: sete;
-}
-.oito {
-    grid-area: oito;
-}
-
-.nove {
-    grid-area: nove;
-}
-.salvar {
-    grid-area: salvar;
-}
-
-.quatro {
-    grid-area: quatro;
-}
-.cinco {
-    grid-area: cinco;
-}
-
-.seis {
-    grid-area: seis;
-}
-.recuperar {
-    grid-area: recuperar;
-}
-um dois tres limpar'
-    'zero decimal zero-duplo igual';
-.um {
-    grid-area: um;
-}
-.dois {
-    grid-area: dois;
-}
-
-.tres {
-    grid-area: tres;
-}
-.decimal {
-    grid-area: decimal;
-}
-
-.zero-duplo {
-    grid-area: zero-duplo;
-}
-.igual {
-    grid-area: igual;
-}
-
-.limpar {
-    grid-area: limpar;
-}
-
-.teclas > button {
+    grid-template-areas:
+      'somar subtrair multiplicar dividir'
+      'sete oito nove salvar'
+      'quatro cinco seis recuperar'
+      'um dois tres limpar'
+      'zero decimal zero-duplo igual';
+  }
+  
+  .teclas > button {
     border-radius: 50%;
     font-size: 2rem;
     cursor: pointer;
-
-}
-
-.operador {
+  }
+  
+  [data-tecla='somar'] {
+    grid-area: somar;
+  }
+  
+  [data-tecla='subtrair'] {
+    grid-area: subtrair;
+  }
+  
+  [data-tecla='multiplicar'] {
+    grid-area: multiplicar;
+  }
+  
+  [data-tecla='dividir'] {
+    grid-area: dividir;
+  }
+  
+  .zero {
+    grid-area: zero;
+  }
+  
+  .um {
+    grid-area: um;
+  }
+  
+  .dois {
+    grid-area: dois;
+  }
+  
+  .tres {
+    grid-area: tres;
+  }
+  
+  .quatro {
+    grid-area: quatro;
+  }
+  
+  .cinco {
+    grid-area: cinco;
+  }
+  
+  .seis {
+    grid-area: seis;
+  }
+  
+  .sete {
+    grid-area: sete;
+  }
+  
+  .oito {
+    grid-area: oito;
+  }
+  
+  .nove {
+    grid-area: nove;
+  }
+  
+  .decimal {
+    grid-area: decimal;
+  }
+  
+  [data-tecla='limpar'] {
+    grid-area: limpar;
+  }
+  
+  [data-tecla='salvar'] {
+    grid-area: salvar;
+  }
+  
+  [data-tecla='recuperar'] {
+    grid-area: recuperar;
+  }
+  
+  .zero-duplo {
+    grid-area: zero-duplo;
+  }
+  
+  [data-tecla='igual'] {
+    grid-area: igual;
+  }
+  
+  [data-tipo-tecla='operador'] {
     background-color: var(--cor-fundo-operador-escuro);
-}
-
-.numero {
+  }
+  
+  [data-tipo-tecla='numero'] {
     background-color: var(--cor-fundo-numero-escuro);
     color: var(--cor-numero-escuro);
-}
-
-.acao {
+  }
+  
+  .acao {
     background-color: var(--cor-fundo-acoes-escuro);
-}
-
+  }
